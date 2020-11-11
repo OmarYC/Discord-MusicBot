@@ -12,7 +12,7 @@ module.exports = {
     const channel = message.member.voice.channel
     if (!channel)return sendError("I'm sorry but you need to be in a voice channel to play music!", message.channel);
     const serverQueue = message.client.queue.get(message.guild.id);
-    if (!serverQueue)return sendError("There is nothing playing that I could skip for you.", message.channel);
+    if (!serverQueue)return sendError("TF are you trying to skip lol.", message.channel);
     serverQueue.connection.dispatcher.end("Skiped the music");
     message.react("✅")
   },
