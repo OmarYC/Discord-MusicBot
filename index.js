@@ -10,6 +10,12 @@ client.config = {
   prefix: process.env.PREFIX
 }
 
+client.once('ready', async () => {
+	console.log('Bot is Online!');
+	client.channels.cache.get('762719248471818280').send('Bot is online!');
+	client.user.setActivity('Atomic Gaming! | prefix ">"', { type: 'WATCHING' })
+});
+
 //Loading Events
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
